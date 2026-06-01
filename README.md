@@ -39,7 +39,60 @@ Client → Linux Server → Wazuh Agent → Wazuh Manager → Dashboard
 - Add attack simulations
 - Create custom detection rules
 - Integrate threat intelligence feeds
+## Environment
 
+### Infrastructure
+
+| Component | Operating System | Role |
+|------------|-----------------|------|
+| Wazuh Server | Ubuntu 22.04 | Manager, Indexer, Dashboard |
+| Linux Client | Ubuntu 22.04 | Monitored Endpoint |
+| Windows Client | Windows Server 2025 | Monitored Endpoint |
+
+### AWS Deployment
+
+The infrastructure was deployed inside AWS using EC2 instances within the same VPC.
+
+Instances deployed:
+
+- wazuh_all_in_one_new
+- linux_client_new
+- windows_client_new
+
+## Security Scenarios Tested
+
+### Linux
+
+- Failed SSH login attempts
+- Privilege escalation using sudo
+- File integrity monitoring (/etc/passwd)
+
+### Windows
+
+- User account creation
+- Administrator group modification
+- Authentication monitoring
+- Audit policy changes
+
+## Threat Hunting
+
+The project included:
+
+- Agent filtering
+- Event correlation
+- MITRE ATT&CK mapping
+- Authentication anomaly detection
+- Privileged access monitoring
+
+## Key Skills Demonstrated
+
+- SIEM Deployment
+- EDR Monitoring
+- Linux Security
+- Windows Security Monitoring
+- Threat Hunting
+- AWS Cloud Security
+- Security Operations Center (SOC)
 ## Author
 
 Fatima Ezzahra Naimi  
